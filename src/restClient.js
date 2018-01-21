@@ -121,7 +121,7 @@ export default (apiUrl, httpClient = jsonApiHttpClient) => {
           }
           return interDic;
         });
-        return { data: jsonData, total: json.meta["total"] };
+        return { data: jsonData, total: json.meta.page["total"] };
       case GET_MANY:
         jsonData = json.data.map(function(obj) {
           return Object.assign({ id: obj.id }, obj.attributes);
